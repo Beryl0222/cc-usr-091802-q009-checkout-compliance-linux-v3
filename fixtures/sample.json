@@ -1,0 +1,6 @@
+{
+  "policy_id": "financial-marketing-2026",
+  "effective_at": "2026-09-30T00:00:00+08:00",
+  "categories": ["bank-card", "payment-tool", "credit", "asset-management", "installment"],
+  "prohibited_phrases": ["low-risk", "guaranteed-return", "no-cost"]
+}
