@@ -1,0 +1,210 @@
+[
+  {
+    "policy_id": "financial-marketing",
+    "version": 1,
+    "note": "2017 试行规则：信贷/理财可与银行卡同屏，营销限制较宽松；9-30 新规先在上海灰度，期间其他地区及上海未命中用户继续执行本版本，10-15 全国全量时闭合",
+    "regions": ["*"],
+    "effective_from": "2017-12-01T00:00:00+08:00",
+    "effective_to": "2026-10-15T00:00:00+08:00",
+    "canary_percent": 100,
+    "published_at": "2017-11-20T10:00:00+08:00",
+    "groups": [
+      {"key": "payment", "title": "银行卡与支付账户", "order": 0,
+       "categories": ["bank-card", "payment-tool"]},
+      {"key": "credit-finance", "title": "消费信贷与分期", "order": 1,
+       "categories": ["credit", "installment"]},
+      {"key": "wealth", "title": "理财", "order": 2,
+       "categories": ["asset-management"]}
+    ],
+    "categories": [
+      {"category": "bank-card", "label": "银行卡", "payment_allowed": true,
+       "checkout_visible": true, "required_risk_disclosure": [],
+       "group_key": "payment", "order": 0, "marketable": true},
+      {"category": "payment-tool", "label": "支付账户余额", "payment_allowed": true,
+       "checkout_visible": true, "required_risk_disclosure": [],
+       "group_key": "payment", "order": 1, "marketable": true},
+      {"category": "credit", "label": "消费信贷", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": ["贷款有风险，借款需谨慎"],
+       "group_key": "credit-finance", "order": 0, "marketable": true},
+      {"category": "installment", "label": "分期付款", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": ["分期服务可能产生手续费，以合同约定为准"],
+       "group_key": "credit-finance", "order": 1, "marketable": true},
+      {"category": "asset-management", "label": "理财产品", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": ["市场有风险，投资需谨慎"],
+       "group_key": "wealth", "order": 0, "marketable": true}
+    ],
+    "marketing": {
+      "prohibited_phrases": ["保本保息", "无风险高收益"],
+      "guaranteed_return_patterns": ["保本保收益", "刚性兑付", "稳赚不赔"],
+      "first_installment_only_patterns": [],
+      "forbidden_traffic_surfaces": [],
+      "financial_keywords": ["借钱", "借款", "贷款", "额度", "分期", "理财", "基金"],
+      "enabled_rules": ["prohibited-phrase", "guaranteed-return"],
+      "clause_refs": {
+        "prohibited-phrase": "《金融产品网络营销管理办法（试行 2017）》第七条",
+        "guaranteed-return": "《金融产品网络营销管理办法（试行 2017）》第七条",
+        "first-installment-only": "《金融产品网络营销管理办法（试行 2017）》（未规定）",
+        "borrowing-inducement": "《金融产品网络营销管理办法（试行 2017）》（未规定）",
+        "payment-traffic-diversion": "《金融产品网络营销管理办法（试行 2017）》（未规定）",
+        "non-marketable-category": "《金融产品网络营销管理办法（试行 2017）》（未规定）"
+      }
+    }
+  },
+  {
+    "policy_id": "financial-marketing",
+    "version": 2,
+    "version_tag": "financial-marketing-2026",
+    "note": "2026 新规：9-30 起上海 20% 灰度；金融产品独立分组、不得营销、禁止导流",
+    "regions": ["SH"],
+    "effective_from": "2026-09-30T00:00:00+08:00",
+    "effective_to": "2026-10-15T00:00:00+08:00",
+    "canary_percent": 20,
+    "parent_version": 1,
+    "published_at": "2026-09-25T15:00:00+08:00",
+    "groups": [
+      {"key": "bank-card", "title": "银行卡", "order": 0,
+       "categories": ["bank-card"]},
+      {"key": "payment-tool", "title": "支付账户", "order": 1,
+       "categories": ["payment-tool"]},
+      {"key": "credit", "title": "消费信贷（贷款服务）", "order": 2,
+       "categories": ["credit"]},
+      {"key": "asset-management", "title": "资管产品", "order": 3,
+       "categories": ["asset-management"]},
+      {"key": "installment", "title": "分期付款（贷款服务）", "order": 4,
+       "categories": ["installment"]}
+    ],
+    "categories": [
+      {"category": "bank-card", "label": "银行卡", "payment_allowed": true,
+       "checkout_visible": true, "required_risk_disclosure": [],
+       "group_key": "bank-card", "order": 0, "marketable": true},
+      {"category": "payment-tool", "label": "支付账户余额", "payment_allowed": true,
+       "checkout_visible": true, "required_risk_disclosure": [],
+       "group_key": "payment-tool", "order": 0, "marketable": true},
+      {"category": "credit", "label": "消费信贷", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": [
+         "消费信贷为贷款服务，开通即产生负债，借款需谨慎",
+         "不得默认勾选；是否使用由用户自主决定"
+       ],
+       "group_key": "credit", "order": 0, "marketable": false},
+      {"category": "asset-management", "label": "资管产品", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": [
+         "货币市场基金不等于银行存款，不保证本金与最低收益",
+         "市场有风险，投资需谨慎；过往收益不代表未来表现"
+       ],
+       "group_key": "asset-management", "order": 0, "marketable": false},
+      {"category": "installment", "label": "分期付款", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": [
+         "分期为贷款服务，需按期偿还本金与利息",
+         "已展示年化利率与总费用，请勿仅参考首期金额"
+       ],
+       "group_key": "installment", "order": 0, "marketable": false}
+    ],
+    "marketing": {
+      "prohibited_phrases": [
+        "低风险", "low-risk", "无风险", "免息", "零利率", "日息万分之一", "随借随还零成本"
+      ],
+      "guaranteed_return_patterns": [
+        "保本", "保本保收益", "保本保息", "刚性兑付", "稳赚不赔",
+        "零风险", "100%兑付", "保证收益", "不亏本"
+      ],
+      "first_installment_only_patterns": [
+        "首期0元", "首月0元", "月供低至", "日供低至", "第一期仅", "0元购机", "每月仅需"
+      ],
+      "forbidden_traffic_surfaces": ["repayment", "payment-result", "repayment-success"],
+      "financial_keywords": [
+        "借钱", "借款", "贷款", "额度", "取现", "分期", "理财", "基金", "信贷", "开通额度", "月供"
+      ],
+      "clause_refs": {
+        "prohibited-phrase": "《金融产品网络营销管理办法》（2026）第十一条：不得使用低风险、无风险等误导性表述",
+        "guaranteed-return": "《金融产品网络营销管理办法》（2026）第十二条：不得对资管产品作保本保收益承诺",
+        "first-installment-only": "《金融产品网络营销管理办法》（2026）第十三条：信贷、分期营销应显著展示年化利率与总费用，不得仅突出首期费用",
+        "borrowing-inducement": "《金融产品网络营销管理办法》（2026）第十条：不得以红包、立减等优惠诱导借款，不得默认勾选",
+        "payment-traffic-diversion": "《金融产品网络营销管理办法》（2026）第八条：非银行支付机构不得为金融产品导流，还款页、支付结果页不得展示金融营销",
+        "non-marketable-category": "《金融产品网络营销管理办法》（2026）第七条：消费信贷、资管、分期可作支付方式但不得在支付链路营销"
+      }
+    }
+  },
+  {
+    "policy_id": "financial-marketing",
+    "version": 3,
+    "version_tag": "financial-marketing-2026",
+    "note": "2026 新规：10-15 起全国全量，上海灰度窗口同步关闭",
+    "regions": ["*"],
+    "effective_from": "2026-10-15T00:00:00+08:00",
+    "effective_to": null,
+    "canary_percent": 100,
+    "parent_version": 2,
+    "published_at": "2026-10-12T10:00:00+08:00",
+    "groups": [
+      {"key": "bank-card", "title": "银行卡", "order": 0,
+       "categories": ["bank-card"]},
+      {"key": "payment-tool", "title": "支付账户", "order": 1,
+       "categories": ["payment-tool"]},
+      {"key": "credit", "title": "消费信贷（贷款服务）", "order": 2,
+       "categories": ["credit"]},
+      {"key": "asset-management", "title": "资管产品", "order": 3,
+       "categories": ["asset-management"]},
+      {"key": "installment", "title": "分期付款（贷款服务）", "order": 4,
+       "categories": ["installment"]}
+    ],
+    "categories": [
+      {"category": "bank-card", "label": "银行卡", "payment_allowed": true,
+       "checkout_visible": true, "required_risk_disclosure": [],
+       "group_key": "bank-card", "order": 0, "marketable": true},
+      {"category": "payment-tool", "label": "支付账户余额", "payment_allowed": true,
+       "checkout_visible": true, "required_risk_disclosure": [],
+       "group_key": "payment-tool", "order": 0, "marketable": true},
+      {"category": "credit", "label": "消费信贷", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": [
+         "消费信贷为贷款服务，开通即产生负债，借款需谨慎",
+         "不得默认勾选；是否使用由用户自主决定"
+       ],
+       "group_key": "credit", "order": 0, "marketable": false},
+      {"category": "asset-management", "label": "资管产品", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": [
+         "货币市场基金不等于银行存款，不保证本金与最低收益",
+         "市场有风险，投资需谨慎；过往收益不代表未来表现"
+       ],
+       "group_key": "asset-management", "order": 0, "marketable": false},
+      {"category": "installment", "label": "分期付款", "payment_allowed": true,
+       "checkout_visible": true,
+       "required_risk_disclosure": [
+         "分期为贷款服务，需按期偿还本金与利息",
+         "已展示年化利率与总费用，请勿仅参考首期金额"
+       ],
+       "group_key": "installment", "order": 0, "marketable": false}
+    ],
+    "marketing": {
+      "prohibited_phrases": [
+        "低风险", "low-risk", "无风险", "免息", "零利率", "日息万分之一", "随借随还零成本"
+      ],
+      "guaranteed_return_patterns": [
+        "保本", "保本保收益", "保本保息", "刚性兑付", "稳赚不赔",
+        "零风险", "100%兑付", "保证收益", "不亏本"
+      ],
+      "first_installment_only_patterns": [
+        "首期0元", "首月0元", "月供低至", "日供低至", "第一期仅", "0元购机", "每月仅需"
+      ],
+      "forbidden_traffic_surfaces": ["repayment", "payment-result", "repayment-success"],
+      "financial_keywords": [
+        "借钱", "借款", "贷款", "额度", "取现", "分期", "理财", "基金", "信贷", "开通额度", "月供"
+      ],
+      "clause_refs": {
+        "prohibited-phrase": "《金融产品网络营销管理办法》（2026）第十一条：不得使用低风险、无风险等误导性表述",
+        "guaranteed-return": "《金融产品网络营销管理办法》（2026）第十二条：不得对资管产品作保本保收益承诺",
+        "first-installment-only": "《金融产品网络营销管理办法》（2026）第十三条：信贷、分期营销应显著展示年化利率与总费用，不得仅突出首期费用",
+        "borrowing-inducement": "《金融产品网络营销管理办法》（2026）第十条：不得以红包、立减等优惠诱导借款，不得默认勾选",
+        "payment-traffic-diversion": "《金融产品网络营销管理办法》（2026）第八条：非银行支付机构不得为金融产品导流，还款页、支付结果页不得展示金融营销",
+        "non-marketable-category": "《金融产品网络营销管理办法》（2026）第七条：消费信贷、资管、分期可作支付方式但不得在支付链路营销"
+      }
+    }
+  }
+]

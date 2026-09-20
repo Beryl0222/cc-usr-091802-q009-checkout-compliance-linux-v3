@@ -1,0 +1,60 @@
+[
+  {
+    "source_id": "bank-card-icbc",
+    "display_name": "工商银行储蓄卡（尾号 6228）",
+    "category": "bank-card",
+    "provider_id": "pv-icbc",
+    "effective_from": "2020-01-01T00:00:00+08:00",
+    "regions": ["CN"],
+    "merchant_mccs": []
+  },
+  {
+    "source_id": "balance-alipay",
+    "display_name": "支付宝余额",
+    "category": "payment-tool",
+    "provider_id": "pv-alipay",
+    "effective_from": "2020-01-01T00:00:00+08:00",
+    "regions": ["CN"],
+    "merchant_mccs": []
+  },
+  {
+    "source_id": "credit-zhaolian",
+    "display_name": "招联好期贷（消费信贷）",
+    "category": "credit",
+    "provider_id": "pv-zhaolian",
+    "effective_from": "2021-06-01T00:00:00+08:00",
+    "regions": ["CN"],
+    "merchant_mccs": [],
+    "risk_notes": ["贷款人为招联消费金融有限公司，授信额度以审批为准"]
+  },
+  {
+    "source_id": "credit-mashang",
+    "display_name": "马上消费贷（消费信贷）",
+    "category": "credit",
+    "provider_id": "pv-mashang",
+    "effective_from": "2022-03-01T00:00:00+08:00",
+    "regions": ["CN"],
+    "merchant_mccs": ["5311", "5411", "5732"],
+    "risk_notes": ["贷款人为马上消费金融股份有限公司"]
+  },
+  {
+    "source_id": "fund-tianhong-moneyfund",
+    "display_name": "天弘余额宝货币市场基金",
+    "category": "asset-management",
+    "provider_id": "pv-tianhong",
+    "effective_from": "2023-05-01T00:00:00+08:00",
+    "regions": ["CN"],
+    "merchant_mccs": [],
+    "risk_notes": ["基金代码 000198，七日年化收益不代表未来收益"]
+  },
+  {
+    "source_id": "installment-baixin",
+    "display_name": "百信银行分期",
+    "category": "installment",
+    "provider_id": "pv-baixin",
+    "effective_from": "2024-01-01T00:00:00+08:00",
+    "regions": ["CN"],
+    "merchant_mccs": [],
+    "risk_notes": ["分期服务由百信银行提供"]
+  }
+]

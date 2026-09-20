@@ -1,0 +1,44 @@
+[
+  {
+    "provider_id": "pv-icbc",
+    "name": "中国工商银行",
+    "qualification": "bank",
+    "license_no": "B0001H111000001",
+    "valid_until": null
+  },
+  {
+    "provider_id": "pv-baixin",
+    "name": "百信银行",
+    "qualification": "bank",
+    "license_no": "B0210H111000001",
+    "valid_until": null
+  },
+  {
+    "provider_id": "pv-alipay",
+    "name": "支付宝（支付机构）",
+    "qualification": "payment-institution",
+    "license_no": "Z20001330",
+    "valid_until": null
+  },
+  {
+    "provider_id": "pv-zhaolian",
+    "name": "招联消费金融公司",
+    "qualification": "consumer-finance",
+    "license_no": "X0001H144000001",
+    "valid_until": null
+  },
+  {
+    "provider_id": "pv-mashang",
+    "name": "马上消费金融公司",
+    "qualification": "consumer-finance",
+    "license_no": "X0002H155000001",
+    "valid_until": null
+  },
+  {
+    "provider_id": "pv-tianhong",
+    "name": "天弘基金管理有限公司",
+    "qualification": "fund-manager",
+    "license_no": "00000510",
+    "valid_until": null
+  }
+]
