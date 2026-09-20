@@ -1,0 +1,24 @@
+{
+  "description": "横跨 2026-09-30 政策生效日的渠道回执：含迟到确认与错误分类，供审计复原重放。",
+  "receipts": [
+    {
+      "checkout_id": "C1",
+      "source_id": "cf-credit",
+      "status": "succeeded",
+      "claimed_category": "credit",
+      "channel_ref": "CH-7002",
+      "attempt_at": "2026-09-29T22:25:00+08:00",
+      "received_at": "2026-09-30T09:12:40+08:00"
+    },
+    {
+      "checkout_id": "C1",
+      "source_id": "cf-credit",
+      "status": "settled",
+      "claimed_category": "payment-tool",
+      "channel_ref": "CH-7002-DUP",
+      "attempt_at": "2026-09-29T22:25:00+08:00",
+      "received_at": "2026-10-01T10:00:00+08:00",
+      "note": "渠道侧错误分类：消费信贷被回报为支付工具，以登记处权威分类为准"
+    }
+  ]
+}
